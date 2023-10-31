@@ -11,9 +11,15 @@ Example of issues you can have **without branches** :
 
 ![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/push_error.png)
 
-Ho no ! I can't push my changes because someone else pushed changes to the remote repository. I need to pull their changes first.
+Ho no ! I can't push my changes because someone else pushed changes to the remote repository. I need to pull their changes.
 
-We will see how to avoid this kind of issues with branches.
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/pull_error.png)
+
+Ho no ! I can't pull their changes because there is a conflict.
+We will see how to avoid this kind of issues with `branches`.
+
+At the end of this workshop, I'll explain you how to resolve this kind of issues.
+
 
 ## Chapter 1: Creating and Cloning Repositories
 
