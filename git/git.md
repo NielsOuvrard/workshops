@@ -48,7 +48,6 @@ Now you have many branches, you can merge them with the main branch.
 2.4. **Merge Branches**
    - Merge changes from main to your branch. `git merge main`
    - You'll see some conflict markers in the files that were modified in both branches. Open the files and resolve the merge conflicts.
-   - Resolve merge conflicts if they occur.
 
 #### on vscode
 
@@ -58,10 +57,37 @@ Now you have many branches, you can merge them with the main branch.
 
 ![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/merge_emacs.png)
 
+2.5. **Resolve Merge Conflicts**
+   - `HEAD` is the most recent commit on your current branch. The other commit is the most recent commit on the branch you're merging from.
+   - `main` is the branch you're merging from.
+   - Remove the comments `<<<<<<< HEAD` and `>>>>>>> main` and keep the code you want to keep.
+   - Add, commit, and push your changes.
+
 ## Chapter 3: Collaborating on GitHub
 3.1. **Create a Pull Request**
-   - Make changes in your forked repository and create a pull request.
+   - Make changes in your repository is an easy way to merge changes from one branch to another.
    - Discuss and review code changes with others.
+
+#### go to branches on github
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/Screenshot%202023-10-31%20at%2010.23.16.png)
+
+#### create a pull request
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/new_pr.png)
+
+
+#### give a title
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/pr_name.png)
+
+#### resolve conflicts
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/resolve_conflict.png)
+
+#### merge the pull request
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/merge_github.png)
 
 3.2. **Review and Merge Pull Requests**
    - Review and approve pull requests from collaborators.
