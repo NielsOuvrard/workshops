@@ -108,6 +108,7 @@ a.out
    - Write clear and descriptive commit messages. You can use emojis to make your commit messages more expressive :
 ```
    # some emojis
+🚀 :rocket:         New release
 🤖 :ci:             Changes to our CI configuration files and scripts
 🎉 :tada:           Awesome new feature - let's celebrate!
 📖 :docs:           Documentation only changes
