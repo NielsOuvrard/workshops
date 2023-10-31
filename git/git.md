@@ -85,12 +85,11 @@ Now you have many branches, you can merge them with the main branch.
 
 ![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/resolve_conflict.png)
 
-#### merge the pull request
+#### resolve conflicts and merge
 
 ![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/merge_github.png)
 
 3.2. **Review and Merge Pull Requests**
-   - Review and approve pull requests from collaborators.
    - Merge changes into the original repository.
 
 ## Chapter 4: Best Practices and Workflows
@@ -98,27 +97,34 @@ Now you have many branches, you can merge them with the main branch.
    - Create a `.gitignore` file to exclude files and directories from version control.
 
 4.2. **Commit Messages**
-   - Write clear and descriptive commit messages.
+   - Write clear and descriptive commit messages. You can use emojis to make your commit messages more expressive :
+```
+   # some emojis
+🤖 :ci:             Changes to our CI configuration files and scripts
+🎉 :tada:           Awesome new feature - let's celebrate!
+📖 :docs:           Documentation only changes
+🌟 :feat:           A new feature
+🚑 :fix:            A bug fix
+⚡️ :perf:            A code change that improves performance
+♻️ :refactor:        A code change that neither fixes a bug nor adds a feature
+🎨 :ui:             Changes that affect only UI/styles
+✅ :test:           Adding missing tests or correcting existing tests
+💩 :dirty:          Dirty code - needs to be refactored - think to add @debt in your code
+🔀 :migration:      Doctrine migrations
+✏️  :typo:           A typo fix
+👷️ :ops:            Code for infrastructure
+🚧️ :wip:            Work in progress
+```
 
-4.3. **Rebase vs. Merge**
-   - Understand when to use rebase and when to use merge in Git.
-
-4.4. **Pulling and Updating**
-   - Keep your local repository up to date with changes from the remote.
-
-## Chapter 5: Git Tags and Releases
-5.1. **Creating Tags**
+4.3. **Creating Tags**
    - Create annotated and lightweight tags to mark significant points in your project's history.
-
-5.2. **Managing Releases**
-   - Create a GitHub release for a specific version of your project.
 
 ## Chapter 6: Git Stash
 6.1. **Stashing Changes**
-   - Temporarily store changes in the stash to work on something else.
+   - Staging is a way to mark files as ready to be committed. You can use `git stash` to save changes that you don't want to commit yet.
 
 6.2. **Applying Stashed Changes**
-   - Apply stashed changes to your working directory.
+   - Apply stashed changes to your working directory with `git stash apply`.
 
 ## Conclusion
 Congratulations! You've completed the Git and GitHub Workshop. You are now equipped with the knowledge and skills to use Git and GitHub effectively in your programming projects. Remember to continue practicing and exploring advanced features to become a Git and GitHub expert.
