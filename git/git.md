@@ -16,7 +16,7 @@ Do this workshop by groups of 2 or 3. You will need to create a repository on Gi
    - Give it a name like "git-workshop".
 
 1.2. **Clone a Repository**
-   - (**Every person of the group**) Clone this repository from GitHub to your local machine.
+   - Clone this repository from GitHub to your local machine.
 
 1.3. **Make Changes and Push to GitHub**
    - (**Only one in the group**) Code something, commit your changes, and push them to the remote repository. Like a main.c file with a hello world.
@@ -27,22 +27,36 @@ A branch will be useful for adding new features to your project without affectin
 
 ## Chapter 2: Branching and Merging
 2.1. **Create a New Branch**
-   - (**Every person of the group**) Create a new branch with `git checkout -b <branch-name>`. The `-b` flag creates a new branch. You can call it by your name, like `git checkout -b <your-name>`.
+   - Create a new branch with `git checkout -b <branch-name>`. The `-b` flag creates a new branch. You can call it by your name, like `git checkout -b <your-name>`.
 
 #### Now every person of the group have a branch with their name. So you can work on your own branch and push your changes to your branch. You can also merge your branch with the main branch.
 
-[image]()
 
 2.2. **Make Changes in a Branch**
    - Make changes to files in your branch. You can create new files, edit existing files, or delete files. For this example, edit the main.c file and modify the hello world to print your name.
    - Add, commit, and push your changes.
 
-2.3. **Merge Branches**
-   - Switch to the main branch. `git checkout main`
-   - Modify files in the main branch.
-   - Merge changes from a feature branch into the main branch. `git merge <branch-name>`
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/Screenshot%202023-10-31%20at%2010.23.16.png)
+
+Now you have many branches, you can merge them with the main branch.
+
+2.3. **Modify the main** (**Only one in the group**)
+   - Move to the main branch. `git checkout main`
+   - Modify the main.c file in the main branch. Change the hello world to print "Hello, world from main!".
+   - Return to your branch. `git checkout <your-name>`
+
+2.4. **Merge Branches**
+   - Merge changes from main to your branch. `git merge main`
    - You'll see some conflict markers in the files that were modified in both branches. Open the files and resolve the merge conflicts.
    - Resolve merge conflicts if they occur.
+
+#### on vscode
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/merge_vs.png)
+
+#### on emacs
+
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/merge_emacs.png)
 
 ## Chapter 3: Collaborating on GitHub
 3.1. **Create a Pull Request**
