@@ -15,7 +15,7 @@ Ho no ! I can't push my changes because someone else pushed changes to the remot
 
 ![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/pull_error.png)
 
-Ho no ! I can't pull their changes because there is a conflict.
+Ho no ! I my pull generated conflicts. I need to resolve them.
 
 If you have this kind of issues, refer to the chapter 2.4. **Merge Branches**.
 Your conflictual files will look like this (chapter 2.4).
