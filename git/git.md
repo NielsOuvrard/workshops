@@ -7,11 +7,13 @@ Welcome to the Git and GitHub Workshop my dear students ! In this workshop, you 
 
 Branching make easier to work on a project with multiple people. Each person can work on a feature branch and merge their changes into the main branch when they're done. Branching also makes it easier to work on multiple features at the same time without affecting each other.
 
-Example of issues you can have without branches :
+Example of issues you can have **without branches** :
 
+![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/push_error.png)
 
-![image](https://raw.githubusercontent.com/NielsOuvrard/workshops/master/assets/pusr_error.png)
+Ho no ! I can't push my changes because someone else pushed changes to the remote repository. I need to pull their changes first.
 
+We will see how to avoid this kind of issues with branches.
 
 ## Chapter 1: Creating and Cloning Repositories
 
