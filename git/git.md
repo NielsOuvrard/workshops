@@ -94,7 +94,15 @@ Now you have many branches, you can merge them with the main branch.
 
 ## Chapter 4: Best Practices and Workflows
 4.1. **.gitignore**
-   - Create a `.gitignore` file to exclude files and directories from version control.
+   - Create a `.gitignore` file to exclude files and directories from version control. A gitignore is a file that tells Git which files and directories to ignore in a project. An example :
+```.gitignore
+*.log
+*~
+#*
+a.out
+*.o
+*.exe
+```
 
 4.2. **Commit Messages**
    - Write clear and descriptive commit messages. You can use emojis to make your commit messages more expressive :
