@@ -27,10 +27,11 @@ A branch will be useful for adding new features to your project without affectin
 
 ## Chapter 2: Branching and Merging
 2.1. **Create a New Branch**
-   - (**Every person of the group**) Create a new branch with `git checkout -b <branch-name>`. The `-b` flag creates a new branch. Or you can use `git branch <branch-name>` to create a new branch and `git checkout <branch-name>` to switch to the new branch. You can call it by your name, like `git checkout -b john`.
-   - Switch between branches. (only if you used git branch) If you're using ho-my-zsh, you can see the current branch in your terminal prompt, instead of `main` or `master`.
+   - (**Every person of the group**) Create a new branch with `git checkout -b <branch-name>`. The `-b` flag creates a new branch. You can call it by your name, like `git checkout -b <your-name>`.
 
 #### Now every person of the group have a branch with their name. So you can work on your own branch and push your changes to your branch. You can also merge your branch with the main branch.
+
+[image]()
 
 2.2. **Make Changes in a Branch**
    - Make changes to files in your branch. You can create new files, edit existing files, or delete files. For this example, edit the main.c file and modify the hello world to print your name.
