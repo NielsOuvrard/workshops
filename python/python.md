@@ -36,7 +36,7 @@ Python is a high-level, interpreted programming language known for its simplicit
 
 ### Why Learn Python?
 
-Python is a popular choice for a wide range of applications, from web development to data analysis and artificial intelligence. Learning Python can broaden your programming horizons and open up new career opportunities. Its clean and readable syntax makes it an excellent language for both beginners and experienced programmers.
+Python is a popular choice for a wide range of applications, from web development to data analysis and artificial intelligence. Its clean and readable syntax makes it an excellent language for quickly prototyping ideas and building projects. Python is probably the best language for your next project in **Mathematics**.
 
 In this workshop, we'll explore the key features of Python and how they relate to your C programming knowledge. We'll delve into Python's data types, control structures, functions, and more, emphasizing the aspects that differ from C and those that remain similar. By the end of this workshop, you'll be well on your way to adding Python to your programming toolkit.
 
@@ -170,6 +170,7 @@ Python offers two main loop structures: for and while. These loops have similari
 `for` Loop
 In Python, the for loop is primarily used for iterating over sequences (like lists) or other iterable objects.
 
+### Iterating Through Lists
 ```python
 # Python's for loop
 fruits = ["apple", "banana", "cherry"]
@@ -183,6 +184,23 @@ In C, you might use a for loop like this:
 char *fruits[] = {"apple", "banana", "cherry"};
 for (int i = 0; i < 3; i++) {
     printf("%s\n", fruits[i]);
+}
+```
+
+### Iterating Through a Range
+
+Python's for loop can also be used to iterate through a range of numbers.
+
+```python
+# Python's for loop with range
+for i in range(5):
+    print(i)
+```
+
+```c
+// C's for loop with range
+for (int i = 0; i < 5; i++) {
+    printf("%d\n", i);
 }
 ```
 
@@ -206,15 +224,9 @@ while (count < 5) {
 ```
 
 ## Iterating Through Sequences
-Python's `for` loop can be used to iterate through sequences, but it's often more concise and readable than C's `for` loop when working with lists, tuples, and other iterable objects.
+Python's `for` loop can be used to iterate through sequences, but it's often more concise and readable than C's for loop when working with `lists`, `tuples`, and `other iterable objects`.
 
 In this chapter, we've explored Python's control flow structures, including conditional statements and loops, and compared them to similar constructs in C. In the next chapter, we'll dive into functions, which play a crucial role in both languages.
-
-
-
-
-
-
 
 
 ## Chapter 4: Functions
@@ -230,7 +242,7 @@ Python functions are defined using the `def` keyword, which is different from th
 In C, you might define a function as follows:
 
 ```c
-void add(int a, int b)
+void print_add(int a, int b)
 {
     printf("%d", a + b);
 }
@@ -240,7 +252,7 @@ void add(int a, int b)
 In Python, it's more concise:
 
 ```python
-def add(a, b):
+def print_add(a, b):
     print(a + b)
 ```
 
@@ -251,12 +263,12 @@ Calling functions in Python is straightforward. You can call a function by using
 In C, you would call a function like this:
 
 ```c
-int result = add(3, 5);
+int result = mul(3, 5);
 ```
 #### Function Call in Python
 In Python, it's similar:
 ```python
-result = add(3, 5)
+result = mul(3, 5)
 ```
 
 ### Return Values
@@ -266,20 +278,53 @@ Return in C
 In C, you specify the return type in the function declaration:
 
 ```c
-int add(int a, int b)
+int mul(int a, int b)
 {
-    return a + b;
+    return a * b;
 }
 ```
 Return in Python
 In Python, you don't specify the return type:
 
 ```python
-def add(a, b):
-    return a + b
+def mul(a, b):
+    return a * b
 ```
 
-### Default Arguments
+### Variable number of arguments
+Python functions can accept a variable number of arguments.
+In C, this exist with variadic functions.
+
+```python
+def add(*args):
+    result = 0
+    for arg in args:
+        result += arg
+    return result
+
+add(1, 2, 3, 4, 5)  # 15
+```
+
+```c
+int add(int count, ...)
+{
+    int result = 0;
+    va_list args;
+    va_start(args, count);
+    for (int i = 0; i < count; i++) {
+        result += va_arg(args, int);
+    }
+    va_end(args);
+    return result;
+}
+
+add(5, 1, 2, 3, 4, 5);  // 15
+```
+
+
+## Exist only in Python:
+
+1. ### Default Arguments
 Python allows you to define functions with default argument values, which is not a feature in C. This makes Python functions more flexible.
 
 ```python
@@ -287,23 +332,104 @@ def greet(name="Guest"):
     print("Hello, " + name + "!")
 ```
 
-### Lambda Functions
+2. ### Lambda Functions
 Python supports lambda functions, which are small, anonymous functions defined using the lambda keyword. They are similar in concept to function pointers in C.
 ```python
 square = lambda x: x ** 2
 ```
 
-### Function Overloading
+3. ### Function Overloading
 Python does not support function overloading like C++. In Python, a function can only have one definition.
 
 In this chapter, we've explored the basics of functions in Python, highlighting the differences and similarities with C. Functions play a critical role in both languages, and understanding how they work in Python will be valuable as we proceed in this workshop.
 
+```python
+def greet(first_name, last_name):
+    print("Hello, " + first_name + " " + last_name + "!")
 
+def greet(first_name):
+    print("Hello, " + first_name + "!")
 
+greet("John")  # "Hello, John!"
+```
 
+4. ### Multiple return values
+Python functions can return multiple values, while C functions can only return one value.
 
+```python
+def get_name():
+    return "John", "Doe"
 
+first_name, last_name = get_name()
+```
 
+5. ### Keyword Arguments
+Python functions can accept keyword arguments, which are arguments preceded by an identifier when calling a function. This is not a feature in C.
+
+```python
+def greet(first_name, last_name):
+    print("Hello, " + first_name + " " + last_name + "!")
+
+greet(last_name="Doe", first_name="John") # "Hello, John Doe!"
+greet(first_name="John", last_name="Doe") # "Hello, John Doe!"
+```
+
+6. ### Nested Functions
+
+Python allows you to define functions inside other functions, which is not a feature in C.
+```python
+def outer():
+    def inner():
+        print("Hello from inner function!")
+    inner()
+```
+
+7. ### Decorators
+Python supports decorators, which are functions that modify the behavior of other functions. This is not a feature in C.
+
+```python
+# Decorator
+def uppercase(func):
+    def wrapper():
+        result = func()
+        return result.upper()
+    return wrapper
+
+# Decorated function
+@uppercase
+def greet():
+    return "Hello, world!"
+
+greet()  # "HELLO, WORLD!"
+```
+> ℹ️ The @uppercase syntax is a shorthand way of saying `greet = uppercase(greet)`
+
+8. ### Generators
+Python supports generators, which are functions that can be paused and resumed, allowing for lazy evaluation of values. This is not a feature in C.
+
+```python
+def countdown(n):
+    while n > 0:
+        yield n
+        n -= 1
+
+for i in countdown(5):
+    print(i)  # 5, 4, 3, 2, 1
+```
+
+9.  ### Closures
+Python supports closures, which are functions that can access variables defined in an enclosing scope. This is not a feature in C.
+
+```python
+def outer():
+    x = 42
+    def inner():
+        print(x)
+    return inner
+
+inner = outer()
+inner()  # 42
+```
 
 
 ## Chapter 5: Lists and Iteration
@@ -357,6 +483,32 @@ Lists in Python are dynamic and can hold mixed data types, while C arrays have f
 Lists can be easily resized in Python, whereas C arrays have a fixed size.
 
 Python's list methods, such as `append()` and `extend()`, make list manipulation simpler compared to manually managing memory in C.
+
+#### Example: List Manipulation
+
+```python
+# Python list manipulation
+my_list = [1, 2, 3, 4, 5]
+my_list.append(6)  # Add 6 to the end of the list
+my_list.extend([7, 8, 9])  # Add multiple elements to the end of the list
+my_list.insert(0, 0)  # Insert 0 at the beginning of the list
+my_list.remove(5)  # Remove 5 from the list
+my_list.pop()  # Remove the last element from the list
+my_list.pop(0)  # Remove the first element from the list
+my_list.reverse()  # Reverse the order of the list
+my_list.sort()  # Sort the list
+
+print(my_list) # [1, 2, 3, 4, 6, 7, 8]
+```
+
+```c
+// C array manipulation
+int my_array[5] = {1, 2, 3, 4, 5};
+// add an element to the end of the array :
+
+// you can't do that in C ❌ (you need to create a new array with a bigger size)
+```
+
 
 In this chapter, we've explored Python lists and various ways to iterate through them, highlighting the differences and advantages over C arrays. Understanding these concepts will help you work more effectively with Python's data structures.
 
@@ -419,9 +571,26 @@ Consider using C when:
 
 One advantage is that you can combine Python and C in a single project. Python's C API (CPython) allows you to write C extensions and call C functions from Python, making it possible to optimize specific parts of your code while leveraging Python's high-level features.
 
+The file Python
+```python
+import my_module
+
+my_module.my_function()
+```
+
+The file my_module.c
+
+```c
+#include <Python.h>
+
+static PyObject *my_function(PyObject *self, PyObject *args)
+{
+    // Do something
+    return Py_None;
+}
+```
+
 In this chapter, we've discussed the performance considerations when choosing between Python and C. Understanding the strengths and weaknesses of each language is essential for making informed decisions about your programming projects.
-
-
 
 
 ## Exercices
@@ -430,20 +599,44 @@ In this chapter, we've discussed the performance considerations when choosing be
 
 Write a Python program that swaps the values of two variables without using a temporary variable. For example, if `x` is 5 and `y` is 10, after swapping, `x` should be 10 and `y` should be 5.
 
+> Hint: See the code of this markdown file line 601.
+<!-- You can use multiple assignment to swap two variables in Python. -->
+
 ### Exercise 2: Palindrome Checker
 
 Create a Python function that checks whether a given string is a palindrome. A palindrome is a word, phrase, number, or other sequence that reads the same forward and backward (ignoring spaces, punctuation, and capitalization).
+
+> Hint: See the code of this markdown file line 608.
+<!-- You can use the `reversed()` function to reverse a string in Python. -->
 
 ### Exercise 3: Factorial Calculation
 
 Write a Python program to calculate the factorial of a non-negative integer entered by the user. Ensure that the program handles input validation and provides the result.
 
+> Hint: See the code of this markdown file line 615.
+<!-- You can use recursion to calculate the factorial of a number in Python. -->
+
 ### Exercise 4: Fibonacci Sequence
 
 Create a Python function that generates the Fibonacci sequence up to a specified number of terms. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two previous numbers.
 
-### Exercise 5: Prime Number Checker
+> Hint: See the code of this markdown file line 622.
+<!-- You can use recursion to generate the Fibonacci sequence in Python. -->
 
-Develop a Python program that checks if a given positive integer is a prime number. A prime number is a positive integer greater than 1 that is divisible only by 1 and itself.
+### Exercise 5: Print Comb
 
-Feel free to use these exercises in your workshop to challenge your C programmer audience and help them practice their Python skills.
+Write a Python program that prints all possible combinations of two digits between 012 and 789. The digits of left should always be less than the digits on the right.
+This reminds you something ?
+
+
+<!-- exercice with decorators -->
+### Exercise 6: Decorators
+
+This is a function `say_hello`.
+```python
+@repeat(3)
+def say_hello():
+    print("Hello!")
+```
+
+Create a Python decorator that repeats the function call n times. In this example, the function should be called three times.
